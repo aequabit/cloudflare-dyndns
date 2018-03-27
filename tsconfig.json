@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "forceConsistentCasingInFileNames": true,
+        "lib": ["es6"],
+        "locale": "en",
+        "module": "commonjs",
+        "noEmitOnError": true,
+        "noErrorTruncation": true,
+        "outDir": "dist",
+        "pretty": true,
+        "sourceMap": true,
+        "target": "es5",
+    },
+    "exclude": ["node_modules"]
+}
