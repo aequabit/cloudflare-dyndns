@@ -7,7 +7,7 @@
             "options": [120]
         },
         "arrow-parens": false,
-        "curly": [true, "as-needed"],
+        "curly": true,
         "member-ordering": [
             true,
             {
