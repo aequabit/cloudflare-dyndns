@@ -1,18 +1,24 @@
 {
-    "name": "boilerplate-typescript",
+    "name": "cloudflare-dyndns",
     "version": "1.0.0",
-    "description": "TypeScript Boilerplate",
+    "description": "CloudFlare dynamic DNS updater",
     "main": "dist/index.js",
     "devDependencies": {
+        "@types/moment": "^2.13.0",
         "@types/node": "^9.4.7",
+        "@types/npmlog": "^4.1.0",
+        "@types/request-promise": "^4.1.41",
         "nodemon": "^1.14.3",
         "ts-node": "^5.0.1",
         "tslint": "^5.9.1",
         "typescript": "^2.7.2"
     },
     "dependencies": {
-        "moment": "^2.21.0",
-        "winston": "^3.0.0-rc3"
+        "cloudflare": "^2.4.1",
+        "moment": "^2.22.2",
+        "npmlog": "^4.1.2",
+        "request": "^2.87.0",
+        "request-promise": "^4.2.2"
     },
     "scripts": {
         "start": "nodemon --watch src --exec ts-node src/index.ts",
@@ -23,12 +29,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/aequabit/boilerplate-typescript.git"
+        "url": "git+https://github.com/aequabit/cloudflare-dyndns.git"
     },
     "author": "aequabit",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/aequabit/boilerplate-typescript/issues"
+        "url": "https://github.com/aequabit/cloudflare-dyndns/issues"
     },
-    "homepage": "https://github.com/aequabit/boilerplate-typescript#readme"
+    "homepage": "https://github.com/aequabit/cloudflare-dyndns#readme"
 }

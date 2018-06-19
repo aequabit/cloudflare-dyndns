@@ -1,1 +1,1 @@
-# TypeScript Boilerplate
+# CloudFlare dynamic DNS updater

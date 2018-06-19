@@ -1,0 +1,11 @@
+{
+    "debug": true,
+    "logPath": "log",
+    "email": "admin@example.org",
+    "apikey": "",
+    "zoneId": "",
+    "domain": "dyn.example.org",
+    "type": "A",
+    "ttl": 120,
+    "proxied": false
+}
