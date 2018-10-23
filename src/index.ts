@@ -6,17 +6,17 @@ import CloudFlare from './lib/CloudFlare';
 import Logger from './lib/Logger';
 
 // CloudFlare has a limit of 1200 calls every five minutes
-const UPDATE_INTERVAL = 10 * 1000;
+const UPDATE_INTERVAL = 60 * 1000;
 
 const getIp = async (): Promise<string> => {
-    const response = await request({ uri: 'https://wtfismyip.com/json' });
+    const response = await request({ uri: 'https://api.ipify.org?format=json' });
 
     try {
-        return JSON.parse(response).YourFuckingIPAddress;
+        return JSON.parse(response).ip;
     } catch (err) {
         return null;
     }
-}
+};
 
 (async (): Promise<void> => {
     Logger.info('cloudflare', 'Started DNS updater');

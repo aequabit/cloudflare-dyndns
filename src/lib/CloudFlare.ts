@@ -40,6 +40,6 @@ export default class CloudFlare {
             .browse(this._config.zoneId);
 
         return dnsRecord.result
-            .find(x => x.name == this._config.domain) as IRecord;
+            .find(x => x.name === this._config.domain) as IRecord;
     }
 }
