@@ -14,7 +14,7 @@
         "typescript": "^2.7.2"
     },
     "dependencies": {
-        "cloudflare": "^2.4.1",
+        "cloudflare": "^2.7.0",
         "moment": "^2.22.2",
         "npmlog": "^4.1.2",
         "request": "^2.87.0",
@@ -23,7 +23,7 @@
     "scripts": {
         "start": "nodemon --watch src --exec ts-node src/index.ts",
         "test": "nodemon --watch src --exec ts-node src/test.ts",
-        "build": "npm run lint && tsc",
+        "build": "tsc",
         "lint": "tslint -c tslint.json -p tsconfig.json",
         "serve": "node dist/index.js"
     },
