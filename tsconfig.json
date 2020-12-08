@@ -9,6 +9,7 @@
         "outDir": "dist",
         "pretty": true,
         "sourceMap": true,
+        "resolveJsonModule": true,
         "target": "es5"
     },
     "exclude": ["node_modules"]
