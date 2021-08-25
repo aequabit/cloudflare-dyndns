@@ -12,9 +12,8 @@ const cf = new CloudFlare(config);
 let lastIp = null;
 
 const getIp = async (): Promise<string> => {
-    const response = await request({ uri: 'https://api.myip.com' });
-
     try {
+        const response = await request({ uri: 'https://api.myip.com' });
         return JSON.parse(response).ip;
     } catch (err) {
         return null;
