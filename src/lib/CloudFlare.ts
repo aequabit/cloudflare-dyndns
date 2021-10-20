@@ -12,10 +12,24 @@ export default class CloudFlare {
 
     public constructor(config: IConfig) {
         this._config = config;
-        this._cloudFlare = cloudflare({
-            email: this._config.email,
-            key: this._config.apikey
-        });
+        
+        this._cloudFlare = cloudflare(this._buildCfConfig(config));
+    }
+
+    private _buildCfConfig(config: IConfig): object {
+        const isset = (v: any): boolean => {
+            if (v === undefined || v === null) return false;
+            if (v.constructor.name === "String" && v.length === 0) return false;
+            return true;
+        };
+
+        if (isset(config.email) && isset(config.apikey)) {
+            return { email: config.email, key: config.apikey };
+        } else if (isset(config.token)) {
+            return { token: config.token }
+        }
+
+        throw new Error("Config must either have email+apikey or token");
     }
 
     public getConfig(): IConfig {

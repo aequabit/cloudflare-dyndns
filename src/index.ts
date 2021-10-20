@@ -1,9 +1,8 @@
-import * as request from 'request-promise';
-
 import config from './core/config';
 
 import CloudFlare from './lib/CloudFlare';
 import Logger from './lib/Logger';
+import { randomIpService } from './lib/IPService';
 
 // CloudFlare has a limit of 1200 calls every five minutes
 const UPDATE_INTERVAL = 10 * 1000;
@@ -11,17 +10,10 @@ const UPDATE_INTERVAL = 10 * 1000;
 const cf = new CloudFlare(config);
 let lastIp = null;
 
-const getIp = async (): Promise<string> => {
-    try {
-        const response = await request({ uri: 'https://api.myip.com' });
-        return JSON.parse(response).ip;
-    } catch (err) {
-        return null;
-    }
-}
-
 const updateDnsEntry = async () => {
-    let ip = await getIp();
+    const ipService = randomIpService();
+
+    let ip = await ipService();
 
     // Failed to get IP
     if (ip === null) {
